@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.outlineSpace{
+  min-height: calc(100vh - 60px) !important;
+}
+
+.swal-text{
+font-weight: bold;
+color: black;
+}
+
+.swal-button{
+background-color: green;
+}
+
