@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import useIsAdminUser from '../HooksFiles/useIsAdminUser';
+import { AuthContextPro } from '../AuthProviderFiles/AuthProviderPro';
+import Lottie from "lottie-react";
+import spinnerpro from '../SharedFilesALL/Aniki Hamster.json'
+
+
 
 const Dashboard = () => {
 
 
-const [isAdmin] = useIsAdminUser()
+const [isAdmin,Loader] = useIsAdminUser()
 
 
-
-
-
-
-
+if(Loader){
+    return  <Lottie className='w-1/3 mx-auto' animationData={spinnerpro} loop={true} />;
+}
 
 
 
@@ -30,8 +33,10 @@ const [isAdmin] = useIsAdminUser()
 <Link style={{backgroundColor:"#D4ADFC"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>Add a Class</Link>
     <Link style={{backgroundColor:"#D4ADFC"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Classes Classes</Link></>
 
-    :<>
-    <Link style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Selected Classes</Link>
+    :
+    
+    
+    <> <Link style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Selected Classes</Link>
     <Link style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Enrolled Classes</Link></>
 
 

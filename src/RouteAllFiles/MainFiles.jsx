@@ -6,6 +6,8 @@ import Login from '../firebaseFunction/Login/Login';
 import Home from '../Component/Home/Home';
 import Dashboard from '../DashboardFiles/Dashboard';
 import ManageUser from '../DashboardFiles/ADMIN/ManageUser';
+import PrivaiteRoute from '../PrivateRouteMake/PrivaiteRoute';
+import AdminRoute from '../PrivateRouteMake/AdminRoute';
 
 
  const router = createBrowserRouter([
@@ -29,12 +31,12 @@ import ManageUser from '../DashboardFiles/ADMIN/ManageUser';
           },
           {
             path: "/dashboard",
-            element: <Dashboard></Dashboard>,
+            element:<PrivaiteRoute> <Dashboard></Dashboard></PrivaiteRoute>,
             children:[
               {
                 
                   path: "/dashboard/manageuser",
-                  element: <ManageUser />
+                  element: <PrivaiteRoute><AdminRoute><ManageUser /></AdminRoute></PrivaiteRoute>
            
               }
 
