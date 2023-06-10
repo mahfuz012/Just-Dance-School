@@ -1,6 +1,8 @@
 import  { createContext, useEffect, useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import app from '../firebaseFunction/FirebaseAuthentication';
+import useMagicAxiosBoss from '../HooksFiles/useMagicAxiosBoss';
+import axios from 'axios';
 
 
 
@@ -12,6 +14,7 @@ import app from '../firebaseFunction/FirebaseAuthentication';
 export const AuthContextPro = createContext([])
 
 const AuthProviderPro = ({children}) => {
+     
 
     const [userProfile, setProfile] = useState(null)
     const [loader,setLoader] = useState(true)
@@ -50,7 +53,26 @@ const AuthProviderPro = ({children}) => {
     useEffect(() => {
         const unheat = onAuthStateChanged(auth, currentUser => {
            setProfile(currentUser)
-           setLoader(false)
+     
+
+           if(currentUser){
+            axios.post(`http://localhost:5000/jwt`, {email:currentUser.email}  )
+            .then(data=>{
+             console.log(data.data.token);
+             localStorage.setItem('JWT-token',data.data.token)
+             setLoader(false)
+            })
+         }else{
+             localStorage.removeItem('JWT-token')
+         }
+
+
+
+
+
+
+
+
     
      })
     
