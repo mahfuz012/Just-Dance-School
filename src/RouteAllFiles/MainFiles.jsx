@@ -8,6 +8,7 @@ import Dashboard from '../DashboardFiles/Dashboard';
 import ManageUser from '../DashboardFiles/ADMIN/ManageUser';
 import PrivaiteRoute from '../PrivateRouteMake/PrivaiteRoute';
 import AdminRoute from '../PrivateRouteMake/AdminRoute';
+import AddFiles from '../DashboardFiles/Instructor/AddFiles';
 
 
  const router = createBrowserRouter([
@@ -37,6 +38,12 @@ import AdminRoute from '../PrivateRouteMake/AdminRoute';
                 
                   path: "/dashboard/manageuser",
                   element: <PrivaiteRoute><AdminRoute><ManageUser /></AdminRoute></PrivaiteRoute>
+           
+              },
+              {
+                
+                  path: "/dashboard/addfiles",
+                  element: <AddFiles></AddFiles>
            
               }
 
