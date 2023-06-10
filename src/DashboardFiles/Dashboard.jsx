@@ -28,10 +28,10 @@ if(Loader){
 
 {
     (isAdmin === "admin")?<><Link to={'/dashboard/manageuser'} style={{backgroundColor:"#FF0060"}} className='  text-white text-center font-bold text-xl  hover:text-white  p-2 sm:ms-5 my-1 rounded-xl '>Manage User</Link>
-    <Link style={{backgroundColor:"#FF0060"}} className='border text-center font-bold text-xl  hover:text-white text-white p-2 sm:ms-5 my-1 rounded-xl '>Manage Classes</Link></>
+    <Link to={"/dashboard/allclass"} style={{backgroundColor:"#FF0060"}} className='border text-center font-bold text-xl  hover:text-white text-white p-2 sm:ms-5 my-1 rounded-xl '>Manage Classes</Link></>
 :("instructor" === isAdmin)?<>
 <Link to={'/dashboard/addfiles'} style={{backgroundColor:"#D4ADFC"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>Add a Class</Link>
-    <Link style={{backgroundColor:"#D4ADFC"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Classes Classes</Link></>
+    <Link to={"/dashboard/myclasses"} style={{backgroundColor:"#D4ADFC"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Classes </Link></>
 
     :
     

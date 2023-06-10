@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
+import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
+import swal from 'sweetalert';
 
 const AddFiles = () => {
     const {userProfile} = useContext(AuthContextPro)
+    const [axiosMagic] = useMagicAxiosBoss()
     const { reset, register, handleSubmit,  formState: { errors } } = useForm();
 
 
@@ -21,10 +24,19 @@ function onSubmit(data){
     }).then(res=>res.json())
     .then(getdata=>{
         const imageUrl= getdata.data.display_url
-      const { className, classImage, availableSeats, price } = data
-      const allClassData= {className, classImage, availableSeats, price:parseFloat(price),image:imageUrl}
-      console.log(allClassData);
-
+      const { className,instructorName, email, availableSeats, price } = data
+      const allClassData= {className,instructorName,email, availableSeats, price:parseFloat(price),image:imageUrl,instructorImage:userProfile.photoURL}
+       
+      axiosMagic.post('/addclassdata',allClassData)
+      .then(res=>{
+        if(res.data.insertedId){
+            swal({
+                text: `Hi ${userProfile?.displayName}, Successfully Uploaded, Wait for Approval by Admin`,
+                icon: "success",
+            });
+        }
+      })
+      reset()
 
     })
     
@@ -43,7 +55,7 @@ const validatePrice = (value) => {
     if (!value) {
       return 'This field is required';
     }
-    if (value > 100) {
+    if (value > 1000) {
       return 'Price should not exceed $100';
     }
     return true;
@@ -85,14 +97,16 @@ const validatePrice = (value) => {
       <input type="file" {...register('classImage', { required: true })} className=" file-input file-input-bordered file-input-success w-full  " />
       {errors.classImage && <span className="text-red-500">This field is required</span>}
       </div>
+
       <div className='sm:w-10/12'>
       <label className="block mb-2 font-semibold">Instructor Name:</label>
-      <input type="text" value={userProfile.displayName} readOnly className="w-full border border-gray-300 px-3 py-2 bg-gray-200 rounded-md mb-4" />
+      <input type="text" {...register('instructorName')} value={userProfile.displayName} readOnly className="w-full border border-gray-300 px-3 py-2 bg-gray-200 rounded-md mb-4" />
       </div>
+
 
       <div className='sm:w-10/12'>
       <label className="block mb-2 font-semibold">Instructor Email:</label>
-      <input type="email" value={userProfile.email}  readOnly className="w-full border border-gray-300 px-3 py-2 bg-gray-200 rounded-md mb-4" />
+      <input type="email" {...register('email')}  value={userProfile.email}  readOnly className="w-full border border-gray-300 px-3 py-2 bg-gray-200 rounded-md mb-4" />
       </div>
 
       <div className='sm:w-10/12'>
@@ -103,9 +117,10 @@ const validatePrice = (value) => {
             {errors.availableSeats.message || 'Invalid value'}
           </span>
         )}
-
-      
 </div>
+
+
+
 <div className='sm:w-10/12'>
       <label className="block mb-2 font-semibold">Price:</label>
       <input type="number" {...register('price', { required: true,validate: validatePrice })} className="w-full border border-gray-300 px-3 py-2 rounded-md mb-4" />
@@ -115,11 +130,10 @@ const validatePrice = (value) => {
           </span>
         )}
       </div>
+</div>
 
- 
 
 
-      </div>
       <button type="submit" className="bg-emerald-500  py-3 px-2 rounded-md hover:bg-blue-600 my-6 font-bold text-white mx-auto w-2/5">Add Your Class</button>
     </form>
 </div>

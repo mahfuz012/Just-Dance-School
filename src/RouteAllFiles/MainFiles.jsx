@@ -9,6 +9,8 @@ import ManageUser from '../DashboardFiles/ADMIN/ManageUser';
 import PrivaiteRoute from '../PrivateRouteMake/PrivaiteRoute';
 import AdminRoute from '../PrivateRouteMake/AdminRoute';
 import AddFiles from '../DashboardFiles/Instructor/AddFiles';
+import ManageClasses from '../DashboardFiles/ADMIN/ManageClasses';
+import MyClasses from '../DashboardFiles/Instructor/MyClasses';
 
 
  const router = createBrowserRouter([
@@ -44,6 +46,18 @@ import AddFiles from '../DashboardFiles/Instructor/AddFiles';
                 
                   path: "/dashboard/addfiles",
                   element: <AddFiles></AddFiles>
+           
+              },
+              {
+                
+                  path: "/dashboard/myclasses",
+                  element: <MyClasses />
+           
+              },
+              {
+                
+                  path: "/dashboard/allclass",
+                  element:<ManageClasses  />
            
               }
 
