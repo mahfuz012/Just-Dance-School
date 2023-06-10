@@ -22,9 +22,9 @@ if(Loader){
 
 
     return (
-        <div className='w-full flex'>
+        <div className='w-full sm:flex'>
           
-<div style={{backgroundColor:"#E8F6EF"}} className='sm:w-1/5  flex flex-col sm:h-[650px]  p-4'>
+<div style={{backgroundColor:"#E8F6EF"}} className='sm:w-1/6  flex flex-col sm:h-[650px]  p-4'>
 
 {
     (isAdmin === "admin")?<><Link to={'/dashboard/manageuser'} style={{backgroundColor:"#FF0060"}} className='  text-white text-center font-bold text-xl  hover:text-white  p-2 sm:ms-5 my-1 rounded-xl '>Manage User</Link>

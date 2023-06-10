@@ -22,19 +22,7 @@ const { refetch, data: alluser = [] } =
   
   return [alluser,refetch]
 
-
-
-
-
-
-
-
-
-
-
-
-
-    return 
+ 
 };
 
 export default useAllUserProfile;
