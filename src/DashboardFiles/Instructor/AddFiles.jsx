@@ -6,10 +6,31 @@ const AddFiles = () => {
     const {userProfile} = useContext(AuthContextPro)
     const { reset, register, handleSubmit,  formState: { errors } } = useForm();
 
-function onSubmit(data){
-    const { className, classImage, availableSeats, price } = data;
 
-console.log({ className, classImage, availableSeats, price });
+
+
+function onSubmit(data){
+    const imageToken=import.meta.env.VITE_IMAGE_UPLOAD
+    const imageUrl= `https://api.imgbb.com/1/upload?key=${imageToken}`
+
+    const formData = new FormData();
+    formData.append('image', data.classImage[0]);
+    fetch(imageUrl,{
+        method:"POST",
+        body:formData
+    }).then(res=>res.json())
+    .then(getdata=>{
+        const imageUrl= getdata.data.display_url
+      const { className, classImage, availableSeats, price } = data
+      const allClassData= {className, classImage, availableSeats, price:parseFloat(price),image:imageUrl}
+      console.log(allClassData);
+
+
+    })
+    
+
+
+
  
 }
 
