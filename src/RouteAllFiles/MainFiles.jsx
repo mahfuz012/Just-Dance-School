@@ -11,6 +11,7 @@ import AdminRoute from '../PrivateRouteMake/AdminRoute';
 import AddFiles from '../DashboardFiles/Instructor/AddFiles';
 import ManageClasses from '../DashboardFiles/ADMIN/ManageClasses';
 import MyClasses from '../DashboardFiles/Instructor/MyClasses';
+import Feedback from '../DashboardFiles/ADMIN/Feedback';
 
 
  const router = createBrowserRouter([
@@ -58,6 +59,12 @@ import MyClasses from '../DashboardFiles/Instructor/MyClasses';
                 
                   path: "/dashboard/allclass",
                   element:<ManageClasses  />
+           
+              },
+              {
+                
+                  path: `/dashboard/update/:id`,
+                  element:<Feedback  />
            
               }
 

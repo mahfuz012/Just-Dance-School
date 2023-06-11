@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import { useQuery } from '@tanstack/react-query';
@@ -78,7 +78,9 @@ console.log(myclasses);
 
 
 function TableData({index,data}){
-const {className,instructorName,email,status, availableSeats, price,image,instructorImage} = data
+const {className,feedback,status,  price,image,instructorImage} = data
+console.log(feedback?.details);
+
 
 
 return (
@@ -94,7 +96,29 @@ return (
        <td className='flex flex-col border'>
            
      {
-      status === "denied"?  <button className='btn  bg-red-900 text-white my-1'>Feedback</button>: ""
+      status === "denied"?
+      
+      <>
+      <label htmlFor="my_modal_7" className="btn btn-warning my-1">
+        Feedback
+      </label>
+  
+      <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box">
+          <h3 className="text-lg font-bold">{feedback}</h3>
+          <p className="py-4">{feedback}</p>
+          <label className="modal-action btn w-1/6 ms-auto" htmlFor="my_modal_7">
+            Close
+          </label>
+        </div>
+      </div>
+    </>
+
+      
+      
+      
+      : ""
      }
        <button className='btn btn-success my-1'>Update button</button>  
 
@@ -107,8 +131,10 @@ return (
     </>
 )
 
+
  }
 
+ 
 
 
 

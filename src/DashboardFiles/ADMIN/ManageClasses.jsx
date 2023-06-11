@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAllClasses from '../../HooksFiles/useAllClasses';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
+import { Link } from 'react-router-dom';
 
 const ManageClasses = () => {
   const[allclass,refetch] = useAllClasses()
@@ -76,6 +77,11 @@ function deniedSubmit(props){
 function TableDatas({ data, index,approvedSubmit, deniedSubmit }) {
     const { className, instructorName, email, status, availableSeats, price, image, _id } = data ;
   console.log(status);
+  const [showModal, setShowModal] = useState(false);
+  const handleFeedbackClick = () => {
+
+    setShowModal(true);
+  };
     return (
         <>
       <tr className='text-center border-2 border-b-green-700 font-bold text-[15px]'>
@@ -89,16 +95,24 @@ function TableDatas({ data, index,approvedSubmit, deniedSubmit }) {
         <td className='w-1/12'>{availableSeats}</td>
         <td className='w-1/6'>{price} $</td>
         <td className='w-1/6'>
-      <span className={`badge py-3 ${(status ==="approved")?"bg-green-400":(status ==="denied")?"bg-red-400":"bg-purple-700-500"}`}>{status || "pending"}</span>
+      <span className={`badge py-3 ${(status ==="approved")?"bg-success ":(status ==="denied")?"bg-warning":"bg-white border-purple-700"}`}>{status || "pending"}</span>
            
 
         </td>
         <td className='flex flex-col'>
-          <button onClick={() => approvedSubmit(_id)} className="btn btn-success">approved</button>
-          <button onClick={() => deniedSubmit(_id)} className='btn bg-warning my-1'>denied</button>
-          <button className='btn bg-violet-600 text-white'>FeedBack</button>
+          <button disabled={status === "approved"} onClick={() => approvedSubmit(_id)} className="btn btn-success">approved</button>
+          <button disabled={status === "denied"} onClick={() => deniedSubmit(_id)} className='btn bg-warning my-1'>denied</button>
+   
+ <Link to={`/dashboard/update/${_id}`}><button className="btn bg-violet-600 text-white">FeedBack</button></Link>
+
+
+ 
+
+
+
         </td>
       </tr>
+     
       </>
     );
   }
