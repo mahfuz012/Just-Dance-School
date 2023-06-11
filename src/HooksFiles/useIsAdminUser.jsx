@@ -11,17 +11,18 @@ const useIsAdminUser = () => {
     const [axiosMagic] = useMagicAxiosBoss()
 
     
-    const {  data: isAdmin   , isLoading: Loader, refetch } =
+    const {  data: isAdmin, isLoading: Loader, refetch } =
     useQuery({
         queryKey:['isAdmin', userProfile?.email],
         enabled:!loader,
         queryFn:async () => {
             if(userProfile && userProfile.email){
             const res = await axiosMagic.get(`/admin/find/${userProfile.email}`)
-            return res.data.admin 
+            return res.data.admin || false
 
             }
-            return 
+            
+            return false
 
         }
         })

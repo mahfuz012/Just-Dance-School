@@ -77,11 +77,8 @@ function deniedSubmit(props){
 function TableDatas({ data, index,approvedSubmit, deniedSubmit }) {
     const { className, instructorName, email, status, availableSeats, price, image, _id } = data ;
   console.log(status);
-  const [showModal, setShowModal] = useState(false);
-  const handleFeedbackClick = () => {
 
-    setShowModal(true);
-  };
+
     return (
         <>
       <tr className='text-center border-2 border-b-green-700 font-bold text-[15px]'>

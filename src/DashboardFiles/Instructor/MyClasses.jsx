@@ -106,8 +106,8 @@ return (
       <input type="checkbox" id="my_modal_7" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <h3 className="text-lg font-bold">{feedback}</h3>
-          <p className="py-4">{feedback}</p>
+          <h3 className="text-lg font-bold">Subject :{feedback?.subject}</h3>
+          <p className="py-4">Details : {feedback?.details}</p>
           <label className="modal-action btn w-1/6 ms-auto" htmlFor="my_modal_7">
             Close
           </label>

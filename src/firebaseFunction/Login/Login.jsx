@@ -72,6 +72,7 @@ function loginSubmit (data){
       title: "Login is Successfull",
        icon: "success",
     });
+  
     compass(navigationFrom,{ replace: true })
     reset()
   

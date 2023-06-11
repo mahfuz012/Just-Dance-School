@@ -12,6 +12,9 @@ import AddFiles from '../DashboardFiles/Instructor/AddFiles';
 import ManageClasses from '../DashboardFiles/ADMIN/ManageClasses';
 import MyClasses from '../DashboardFiles/Instructor/MyClasses';
 import Feedback from '../DashboardFiles/ADMIN/Feedback';
+import InstructorPage from '../PagesFiles/InstructorPage';
+import ClassesPage from '../PagesFiles/ClassesPage';
+import MyseletedClasses from '../DashboardFiles/Students/MyseletedClasses';
 
 
  const router = createBrowserRouter([
@@ -28,6 +31,14 @@ import Feedback from '../DashboardFiles/ADMIN/Feedback';
           {
             path: "/registerfiles",
             element: <MyRegister />
+         },
+          {
+            path: "/classess",
+            element: <ClassesPage />
+         },
+          {
+            path: "/instructorpage",
+            element: <InstructorPage />
          },
           {
             path: "/loginfiles",
@@ -65,6 +76,12 @@ import Feedback from '../DashboardFiles/ADMIN/Feedback';
                 
                   path: `/dashboard/update/:id`,
                   element:<Feedback  />
+           
+              },
+              {
+                
+                  path: `/dashboard/myallseletedclass`,
+                  element:<MyseletedClasses />
            
               }
 

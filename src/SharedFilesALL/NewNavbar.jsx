@@ -29,9 +29,9 @@ function logoutSubmit(){
     <>
   <Link to={'/'} ><li className=' mx-2 font-semibold'>Home</li></Link> 
           
-  <Link><li className='mx-2 font-semibold'>Instructors</li></Link>
+  <Link to={"/instructorpage"}><li className='mx-2 font-semibold'>Instructors</li></Link>
                
-                <Link to={'/menu'}> <li className='mx-2 font-semibold'>Classes</li></Link>
+                <Link to={'/classess'}> <li className='mx-2 font-semibold'>Classes</li></Link>
 
                 {
     userProfile?
