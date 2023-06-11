@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import swal from 'sweetalert';
 import useIsAdminUser from '../../HooksFiles/useIsAdminUser';
 
 const Login = () => {
+  const locationAddress = useLocation()
+  const compass = useNavigate()
+  const navigationFrom = locationAddress?.state?.from?.pathname || "/"
+
+
+
   const [,,refetch] = useIsAdminUser()
   const {loginProfile,registerWithGoogle} = useContext(AuthContextPro)
 
@@ -18,6 +24,7 @@ const Login = () => {
     function createWithGoogle(){
       registerWithGoogle()
       .then(credenAccount=>{
+        compass(navigationFrom,{ replace: true })
         refetch()
      console.log(credenAccount);
 
@@ -65,6 +72,7 @@ function loginSubmit (data){
       title: "Login is Successfull",
        icon: "success",
     });
+    compass(navigationFrom,{ replace: true })
     reset()
   
   }).catch(error=>{

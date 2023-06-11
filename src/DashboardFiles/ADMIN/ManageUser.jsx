@@ -56,7 +56,7 @@ function makeInstructoruser(props){
             <th style={{ backgroundColor: '#4E9F3D' }} className='font-bold text-white text-sm'>No:</th>
             <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Name</th>
             <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Email</th>
-            <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Roll</th>
+            <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Role</th>
             <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>ACTION</th>
           </tr>
         </thead>

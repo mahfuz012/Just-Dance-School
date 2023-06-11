@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Lottie from "lottie-react";
@@ -8,7 +7,6 @@ import {FcGoogle} from 'react-icons/fc';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import { updateProfile } from 'firebase/auth';
 import swal from 'sweetalert';
-import axios from 'axios';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 
 
@@ -16,6 +14,7 @@ import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 
 
 const MyRegister = () => {
+
   const [axiosMagic] = useMagicAxiosBoss()
  const { reset, register, handleSubmit, watch, formState: { errors } } = useForm();
 const {createRegister,userProfile,registerWithGoogle} = useContext(AuthContextPro)
@@ -39,6 +38,7 @@ function registerWithGoogleAccount(){
      axiosMagic.post('/alluserid', googleDataProvider)
      .then(res => {
       console.log(res.data);
+      
       swal({
         text: `Hi ${userProfile?.displayName}, Successfully completed Registration`,
         icon: "success",
