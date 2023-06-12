@@ -20,6 +20,7 @@ const HomePage = () => {
 
     return (
         <div>
+            
         <NewNavbar/>
         <div className='outlineSpace'>
             <Outlet />

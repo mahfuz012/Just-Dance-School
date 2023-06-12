@@ -18,11 +18,13 @@ import MyseletedClasses from '../DashboardFiles/Students/MyseletedClasses';
 import Paymentpro from '../DashboardFiles/Students/Paymentpro';
 import PaymentHistory from '../DashboardFiles/Students/PaymentHistory';
 import Enrolled from '../DashboardFiles/Students/Enrolled';
+import ErrorManager from '../PagesFiles/ErrorManager';
 
 
  const router = createBrowserRouter([
         {
           path: "/",
+          errorElement:<ErrorManager />,
           element: <HomePage></HomePage>,
 
           children:[
