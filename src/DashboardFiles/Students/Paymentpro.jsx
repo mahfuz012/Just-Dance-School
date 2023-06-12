@@ -13,13 +13,14 @@ const Paymentpro = () => {
     const [seletedclasses] = useSeletedClass()
 
     const findID = seletedclasses.find(p=>p._id === id)
-      
+ 
 if(!findID){
 return <Navigate to={'/classess'}  />
 
 }
     const productprice = findID?.price
-     console.log(productprice);
+    const productid = findID?.classID
+
     const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GETEWAY)
 
 
@@ -34,7 +35,7 @@ return <Navigate to={'/classess'}  />
 <div><div className='mx-auto mt-20 w-3/6 '>
 
 <Elements stripe={stripePromise}>
- <PayCheckout price={productprice} productId={id} itemsName={findID?.className}/>
+ <PayCheckout price={productprice} productId={productid} itemsName={findID?.className}/>
 </Elements>
 
 </div></div>

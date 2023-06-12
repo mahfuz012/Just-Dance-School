@@ -36,8 +36,14 @@ if(Loader){
     :
     
     
-    <> <Link  to={'/dashboard/myallseletedclass'} style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Selected Classes</Link>
-    <Link style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-xl  hover:text-white text-black p-2 sm:ms-5 my-1 rounded-xl '>My Enrolled Classes</Link></>
+    <> <Link  to={'/dashboard/myallseletedclass'} style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-md  hover:text-white text-black py-3 sm:ms-5 my-1 rounded-xl '>My Selected Classes</Link>
+    <Link to={'/dashboard/enrolledclass'}  style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-md hover:text-white text-black py-3 sm:ms-5 my-1 rounded-xl '>My Enrolled Classes</Link>
+    <Link to={'/dashboard/paymenthistory'} style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-md  hover:text-white text-black py-3 sm:ms-5 my-1 rounded-xl '>Payment History</Link>
+    
+    
+    
+    
+    </>
 
 
 }

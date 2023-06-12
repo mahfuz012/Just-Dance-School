@@ -11,14 +11,23 @@ const ClassesPage = () => {
 
 
 
-  const {userProfile} = useContext(AuthContextPro)
+ const {userProfile} = useContext(AuthContextPro)
 const [isAdmin] = useIsAdminUser()   
 const [allclass] = useAllClasses()
 const [axiosMagic] = useMagicAxiosBoss()
 const approvedFindClass = allclass.filter(p=>p.status === "approved")
 
 function selectedClass(props){
-    axiosMagic.post(`/student/selectclass/${userProfile.email}/${props}`)
+
+const getfindDataClass = approvedFindClass.find(p=>p._id === props)
+
+const {availableSeats,className,email,image,instructorName,price,instructorImage} = getfindDataClass
+
+const putData = {availableSeats,className,email,image,instructorName,price,instructorImage,user_email:userProfile.email,classID:props}
+
+
+
+    axiosMagic.post(`/student/selectclass/`,putData)
     .then(res=>{
 
       if(res.data.insertedId){
@@ -59,10 +68,12 @@ function selectedClass(props){
 function Classesall({data,selectedClass,isAdmin}){
     const {_id, image,price,className,instructorName,availableSeats} = data
 
+  
+
     return(<>
 
-    <div className='sm:w-8/12  my-2 mx-auto'>
-  <div className="card lg:card-side bg-base-100 shadow-xl">
+    <div className="sm:w-8/12  my-2 mx-auto">
+  <div className={`card lg:card-side ${(availableSeats === 0 )?"bg-red-500":"bg-base-100"}  shadow-xl`}>
  <img className='sm:h-[350px]  p-2' src={image} alt="Album"/>
   <div className="card-body">
     <h2 className="card-title text-2xl">Dance Name : <span className='font-bold text-blue-700'>{className}</span></h2>
@@ -74,7 +85,7 @@ function Classesall({data,selectedClass,isAdmin}){
     <div className="card-actions justify-end">
 
 
-      <button disabled={isAdmin === "admin" || isAdmin === "instructor"} onClick={()=>selectedClass(_id)} className="btn btn-primary">Select</button>
+      <button disabled={isAdmin === "admin" || isAdmin === "instructor" || availableSeats === 0} onClick={()=>selectedClass(_id)} className="btn btn-primary">Select</button>
 
 
 

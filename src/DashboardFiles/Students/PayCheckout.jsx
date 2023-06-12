@@ -96,7 +96,6 @@ if(paymentIntent){
 
 if(paymentIntent.status ===  "succeeded"){
 
-  
   const paymentInformation= {
 
     email:userProfile?.email,
@@ -110,12 +109,24 @@ if(paymentIntent.status ===  "succeeded"){
      
   }
 
-  axiosMagic.post('/paymenthistory',paymentInformation)
+axiosMagic.post('/paymenthistory',paymentInformation)
   .then(res=>{
+    axiosMagic.patch(`/reducequantity/${productId}`)
+    .then(res=>{
+  
+     
+      console.log(res.data);
+   }).catch(error=>{
+    console.log(error);
+   })
+  
+   
 console.log(res.data);
   })
 
-axiosMagic.patch('/reducequantity')
+
+
+
 
 
 
