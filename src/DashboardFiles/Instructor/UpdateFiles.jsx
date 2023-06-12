@@ -4,6 +4,7 @@ import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import swal from 'sweetalert';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 
 const UpdateFiles = () => {
@@ -82,6 +83,9 @@ const validatePrice = (value) => {
 
     return (
         <div>
+<Helmet>
+<title>Update</title>
+</Helmet>
 
     <div className='text-center '>
           <p className='text-xl p-2 border-b-2 border-red-600 font-semibold bg-success'>

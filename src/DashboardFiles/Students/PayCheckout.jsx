@@ -111,7 +111,7 @@ if(paymentIntent.status ===  "succeeded"){
 
 axiosMagic.post('/paymenthistory',paymentInformation)
   .then(res=>{
-    axiosMagic.patch(`/reducequantity/${productId}`)
+    axiosMagic.put(`/reducequantity/${productId}`)
     .then(res=>{
   
      

@@ -20,7 +20,7 @@ const res = await axiosMagic.get(`/myclassesdata?email=${userProfile.email}`)
     })
       
 
-
+console.log(myclasses);
 
 
 
@@ -55,7 +55,7 @@ const res = await axiosMagic.get(`/myclassesdata?email=${userProfile.email}`)
     <tbody>
  
      {
-        myclasses.map((p,index)=><TableData  index={index} key={p._id} data={p}/>)
+        myclasses?.map((p,index)=><TableData  index={index} key={p._id} data={p}/>)
      }
 
     
@@ -77,7 +77,7 @@ const res = await axiosMagic.get(`/myclassesdata?email=${userProfile.email}`)
 
 
 function TableData({index,data}){
-const {className,feedback,status, _id} = data
+const {className,feedback,status, _id,enroll} = data
 console.log(feedback?.details);
 
 
@@ -91,7 +91,7 @@ return (
 
 
        <td className=' w-2/6 border'>{className}</td>
-       <td className=' w-1/6 border'>enrolled</td>
+       <td className=' w-1/6 border'>{enroll || 0}</td>
        <td className='flex flex-col border'>
            
      {
