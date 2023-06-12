@@ -29,6 +29,33 @@ box-shadow: 0px 0px 2px grey;
   background-image: url("https://i.ibb.co/WvF4psL/7.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.bg-one-two{
+  background-image: url("https://i.ibb.co/q0XsxnS/blue-pink-halftone-background-53876-99004.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-one-three{
+  background-image: url("https://i.ibb.co/zFHmq8W/pexels-photo-7130498-jpeg-cs-srgb-dl-pexels-codioful-formerly-gradienta-7130498.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+
+
+
+
+.swiper-button-next{
+transform: scale(2,2);
+
+
+color:rgb(0, 4, 255) !important
+
+}
+.swiper-button-prev{
+transform: scale(2,2);
+
+
+color:rgb(0, 4, 255) !important
 
 }

@@ -29,6 +29,17 @@ let allprice = Math.round(0) ;
 payhistory?.map(p=>allprice+=p.productprice)
 
 
+const decendingData =  payhistory.sort((a, b) => {
+  const timeA = new Date(a.time);
+  const timeB = new Date(b.time);
+  return timeB.getTime() - timeA.getTime();
+
+});
+
+
+
+
+
 
 
     return (
@@ -60,12 +71,13 @@ payhistory?.map(p=>allprice+=p.productprice)
         <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Email</th>
         <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Transaction ID</th>
         <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Product Id</th>
+        <th style={{ backgroundColor: '#4E9F3D' }} className='ont-bold text-white text-sm'>Time</th>
       </tr>
     </thead>
     <tbody>
  
      {
-        payhistory?.map((p,index)=><TableData index={index} key={p._id} data={p}/>)
+        decendingData?.map((p,index)=><TableData index={index} key={p._id} data={p}/>)
      }
 
     
@@ -90,7 +102,7 @@ payhistory?.map(p=>allprice+=p.productprice)
 
 
 function TableData({data,index}){
-    const {productID,email,itemsName,transactionID} = data
+    const {productID,email,itemsName,transactionID,time} = data
     
     return (
         <>
@@ -101,6 +113,7 @@ function TableData({data,index}){
            <td className=' w-1/12'>{email}</td>
            <td className=' w-1/6'>{transactionID}</td>
            <td className='w-1/6'>{productID}</td>
+           <td className='w-1/6'>{time}</td>
     
     </tr>
       </>

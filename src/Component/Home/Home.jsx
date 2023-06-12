@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 
 import { Pagination, Navigation } from "swiper";
 import { Helmet } from 'react-helmet-async';
+import Popular from '../Popular';
 const Home = () => {
 
 
@@ -45,42 +46,104 @@ const Home = () => {
       >
         <SwiperSlide >
 
-     <div className='sm:flex border border-blue-600 sm:w-full sm:h-[100vh]'>
+<div className='sm:flex border border-blue-600 sm:w-full sm:h-[100vh] bg-one-one'>
 
-<div className='sm:w-6/12 border  border-blue-400 bg-one-one '>
+<div style={{alignItems:"center"}} className='sm:w-6/12  sm:flex flex-col justify-center px-10   '>
 
-<div className="sm:flex sm:flex-col sm:justify-center items-center ">
 
-    <h1 className="sm:text-6xl font-bold text-black bg-success p-5 rounded-2xl">Just School Dance</h1>
-    <p className="sm:text-lg text-black my-5 font-semibold">Register for an unforgettable dance experience!</p>
-  </div>
+<h1 className="sm:text-6xl  text-center font-bold text-black bg-success p-5 rounded-2xl">Just School Dance</h1>
+<p className="sm:text-lg text-black my-5 font-semibold">Register for an unforgettable dance experience!</p>
+
 </div>
 
 
-<div className='sm:w-6/12 bg-gray-200 border border-blue-600 '>
+
+
+
+<div style={{alignItems:"center"}} className='sm:w-6/12 sm:flex justify-center'>
 <img className='mx-auto' src="https://i.ibb.co/7Vx7D0M/1.png" />
 </div>
 
 </div>
-
-        </SwiperSlide>
-
+</SwiperSlide>
 
 
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
-    </>
+
+
+<SwiperSlide >
+
+<div className='sm:flex border border-blue-600 sm:w-full sm:h-[100vh] bg-one-two'>
+
+<div style={{alignItems:"center"}} className='sm:w-6/12  sm:flex flex-col justify-center px-10   '>
+
+
+<h1 className="sm:text-6xl  text-center font-bold text-black bg-success p-5 rounded-2xl">Just School Dance</h1>
+<p className="sm:text-lg text-black my-5 font-semibold">Register for an unforgettable dance experience!</p>
+
 </div>
 
 
-          </div>
+
+
+
+<div style={{alignItems:"center"}} className='sm:w-6/12 sm:flex justify-center'>
+<img className='mx-auto w-4/6' src="https://i.ibb.co/3FtPs7K/canva-colorful-dance-party-night-poster-Ewp3z3-Ww-Ck-U.jpg" />
+</div>
+
+</div>
+</SwiperSlide>
+
+
+
+
+
+<SwiperSlide >
+
+<div className='sm:flex border border-blue-600 sm:w-full sm:h-[100vh] bg-one-three'>
+
+<div style={{alignItems:"center"}} className='sm:w-6/12  sm:flex flex-col justify-center px-10   '>
+
+
+<h1 className="sm:text-6xl  text-center font-bold text-black bg-success p-5 rounded-2xl">Just School Dance</h1>
+<p className="sm:text-lg text-black my-5 font-semibold">Register for an unforgettable dance experience!</p>
+
+</div>
+
+
+
+
+
+<div style={{alignItems:"center"}} className='sm:w-6/12 sm:flex justify-center'>
+<img className='mx-auto' src="https://i.ibb.co/ByMn4P0/3.png" />
+</div>
+
+</div>
+</SwiperSlide>
+
+ 
+      </Swiper>
+    </>
+</div>
+</div>
+
+
+
+
+
+<Popular title="Popular Classes"  details="Here All Popular Classes , you can select Our Course"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     );
 };

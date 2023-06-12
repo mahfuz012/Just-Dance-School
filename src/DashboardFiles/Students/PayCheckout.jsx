@@ -101,7 +101,7 @@ if(paymentIntent.status ===  "succeeded"){
     email:userProfile?.email,
      transactionID:paymentIntent.id,
      productprice:price,
-     
+     time: new Date().toISOString().split('T')[0],
      
      productID:productId,
      
