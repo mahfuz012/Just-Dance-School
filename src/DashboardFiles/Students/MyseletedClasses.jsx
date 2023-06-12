@@ -17,9 +17,8 @@ function deleteSubmit(props){
     console.log(res.data)
   })
 }
-function paymentSubmit(props){
-    console.log(props);
-}
+
+
 
 
 
@@ -68,7 +67,7 @@ function paymentSubmit(props){
  
      {
         seletedclasses.map((p,index)=>
-<TableDatas deleteSubmit={deleteSubmit} paymentSubmit={paymentSubmit} index={index} key={p._id} 
+<TableDatas deleteSubmit={deleteSubmit}  index={index} key={p._id} 
     data={p}/>
 
         )
@@ -101,9 +100,10 @@ function paymentSubmit(props){
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
-function TableDatas({ data, index,deleteSubmit,paymentSubmit }) {
-    const { className,instructorImage, instructorName, availableSeats, price, image, _id } = data ;
+function TableDatas({ data, index,deleteSubmit, }) {
+    const { className, instructorName, availableSeats, price, image, _id } = data ;
 
   
     return (
@@ -121,7 +121,7 @@ function TableDatas({ data, index,deleteSubmit,paymentSubmit }) {
     <RiDeleteBin5Fill onClick={()=>deleteSubmit(_id)}  className='text-3xl cursor-pointer mx-auto text-red-700'/>
    </td>
         <td className=''> 
-        <button onClick={()=>paymentSubmit(_id)} className='btn btn-success'>Payment</button>
+        <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-success'>Payment</button></Link>
         
         </td>
       </tr>

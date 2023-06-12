@@ -16,3 +16,13 @@ color: black;
 background-color: green;
 }
 
+
+
+.StripeElement {
+  padding: 20px;
+box-shadow: 0px 0px 2px grey;
+  border: 1px solid rgb(82, 253, 125) !important;
+}
+
+
+

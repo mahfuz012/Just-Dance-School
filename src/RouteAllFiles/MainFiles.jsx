@@ -15,6 +15,7 @@ import Feedback from '../DashboardFiles/ADMIN/Feedback';
 import InstructorPage from '../PagesFiles/InstructorPage';
 import ClassesPage from '../PagesFiles/ClassesPage';
 import MyseletedClasses from '../DashboardFiles/Students/MyseletedClasses';
+import Paymentpro from '../DashboardFiles/Students/Paymentpro';
 
 
  const router = createBrowserRouter([
@@ -58,6 +59,12 @@ import MyseletedClasses from '../DashboardFiles/Students/MyseletedClasses';
                 
                   path: "/dashboard/addfiles",
                   element: <AddFiles></AddFiles>
+           
+              },
+              {
+                
+                  path: "/dashboard/payment/:id",
+                  element: <Paymentpro />
            
               },
               {
