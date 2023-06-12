@@ -26,7 +26,7 @@ const PaymentHistory = () => {
       
 console.log(payhistory);
 let allprice = Math.round(0) ;
-payhistory.map(p=>allprice+=p.productprice)
+payhistory?.map(p=>allprice+=p.productprice)
 
 
 
@@ -36,16 +36,15 @@ payhistory.map(p=>allprice+=p.productprice)
          
         <div className='sm:flex justify-evenly'>
         <div>
-            <p className='border rounded-3xl p-5 bg-orange-300 font-semibold  text-2xl'>Total Payment No : {payhistory.length}</p>
+            <p className='border rounded-3xl p-5 bg-orange-300 font-semibold  text-2xl'>Total Payment No : {payhistory?.length || ""}</p>
          </div>
         <div>
-            <p className='border rounded-3xl p-5 bg-teal-200 font-semibold  text-xl'>Your gmail : {userProfile.email}</p>
+            <p className='border rounded-3xl p-5 bg-teal-200 font-semibold  text-xl'>Your gmail : {userProfile?.email}</p>
          </div>
 
          <div>
             <p className='border p-5 rounded-3xl bg-lime-200 font-semibold  text-2xl'>
-                Total Price:    
-                {allprice}$</p>
+                Total Price:{allprice || ""}$</p>
          </div>
         </div>
 
@@ -66,7 +65,7 @@ payhistory.map(p=>allprice+=p.productprice)
     <tbody>
  
      {
-        payhistory.map((p,index)=><TableData index={index} key={p._id} data={p}/>)
+        payhistory?.map((p,index)=><TableData index={index} key={p._id} data={p}/>)
      }
 
     
