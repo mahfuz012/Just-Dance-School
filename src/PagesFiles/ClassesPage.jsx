@@ -5,6 +5,7 @@ import useIsAdminUser from '../HooksFiles/useIsAdminUser';
 import { useContext, useState } from 'react';
 import { AuthContextPro } from '../AuthProviderFiles/AuthProviderPro';
 import swal from 'sweetalert';
+import { Helmet } from 'react-helmet-async';
 
 const ClassesPage = () => {
 
@@ -49,7 +50,9 @@ const putData = {availableSeats,className,email,image,instructorName,price,instr
 
     return (
         <div className='w-full'>
-        
+        <Helmet>
+<title>All Class</title>
+</Helmet>
             
 {
     approvedFindClass.map(p=><Classesall  isAdmin={isAdmin}  selectedClass={selectedClass} data={p} key={p._id}/>)

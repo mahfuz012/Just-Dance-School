@@ -19,6 +19,7 @@ import Paymentpro from '../DashboardFiles/Students/Paymentpro';
 import PaymentHistory from '../DashboardFiles/Students/PaymentHistory';
 import Enrolled from '../DashboardFiles/Students/Enrolled';
 import ErrorManager from '../PagesFiles/ErrorManager';
+import UpdateFiles from '../DashboardFiles/Instructor/UpdateFiles';
 
 
  const router = createBrowserRouter([
@@ -63,6 +64,12 @@ import ErrorManager from '../PagesFiles/ErrorManager';
                 
                   path: "/dashboard/addfiles",
                   element: <AddFiles></AddFiles>
+           
+              },
+              {
+                
+                  path: "/dashboard/updatefiles/:id",
+                  element: <UpdateFiles />
            
               },
               {

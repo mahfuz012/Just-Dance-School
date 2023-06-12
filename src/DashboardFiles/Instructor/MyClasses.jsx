@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
 const {userProfile} = useContext(AuthContextPro)
@@ -21,8 +22,6 @@ const res = await axiosMagic.get(`/myclassesdata?email=${userProfile.email}`)
 
 
 
-
-console.log(myclasses);
 
 
 
@@ -56,7 +55,7 @@ console.log(myclasses);
     <tbody>
  
      {
-        myclasses.map((p,index)=><TableData index={index} key={p._id} data={p}/>)
+        myclasses.map((p,index)=><TableData  index={index} key={p._id} data={p}/>)
      }
 
     
@@ -78,7 +77,7 @@ console.log(myclasses);
 
 
 function TableData({index,data}){
-const {className,feedback,status,  price,image,instructorImage} = data
+const {className,feedback,status, _id} = data
 console.log(feedback?.details);
 
 
@@ -106,7 +105,7 @@ return (
       <input type="checkbox" id="my_modal_7" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <h3 className="text-lg font-bold">Subject :{feedback?.subject}</h3>
+          <h3 className="text-lg font-bold bg-warning p-2">Subject :{feedback?.subject}</h3>
           <p className="py-4">Details : {feedback?.details}</p>
           <label className="modal-action btn w-1/6 ms-auto" htmlFor="my_modal_7">
             Close
@@ -120,7 +119,7 @@ return (
       
       : ""
      }
-       <button className='btn btn-success my-1'>Update button</button>  
+      <Link to={`/dashboard/updatefiles/${_id}`}> <button disabled={status === "approved"} className='btn btn-success w-full my-1'>Update button</button> </Link> 
 
        </td>
 

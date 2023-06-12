@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 
 import blackcat from "../SharedFilesALL/lf20_pNx6yH.json"
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -13,6 +14,11 @@ const ErrorManager = () => {
     }
     return (
         <div className='sm:flex mt-10'>
+
+<Helmet>
+<title>Error Page</title>
+</Helmet>
+
 
          <div className='sm:w-6/12 flex flex-col justify-center'>
    <p className='text-5xl font-bold text-center'>
