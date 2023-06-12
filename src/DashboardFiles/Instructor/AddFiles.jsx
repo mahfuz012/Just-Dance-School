@@ -65,7 +65,7 @@ const validatePrice = (value) => {
     if (!value) {
       return 'This field is required';
     }
-    if (value > 5) {
+    if (value > 55) {
       return 'Available seats should not exceed 5';
     }
     return true;
