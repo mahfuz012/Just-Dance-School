@@ -20,25 +20,6 @@ function deleteSubmit(props){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <div>
             <div >

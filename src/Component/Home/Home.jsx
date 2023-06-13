@@ -15,24 +15,25 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { Helmet } from 'react-helmet-async';
 import Popular from '../Popular';
+import PopularclassComponent from '../../SharedFilesALL/PopularclassComponent';
+import PopularIntructorfiles from '../../SharedFilesALL/PopularIntructorfiles';
+
 const Home = () => {
 
 
-
-
-
-
+   
 
 
 
     return (
-        <div>
+        <div className='mt-20'>
+
 
 <Helmet>
 <title>Home | Just Dance</title>
 </Helmet>
 
-          <div className='w-full border h-screen border-red-600'>
+          <div  className=' w-full border h-screen border-red-600'>
 
 <div>
 <>
@@ -134,13 +135,18 @@ const Home = () => {
 
 
 
+<div className=' mt-10 bg-popular-class p-5 flex justify-center'>
+<PopularclassComponent />
+</div>
 
 
 
 
+<Popular title="Popular Intructors"  details="Here All Popular Intructors , You can get Idea"/>
 
-
-
+<div>
+  <PopularIntructorfiles />
+</div>
 
 
 

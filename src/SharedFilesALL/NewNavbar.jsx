@@ -1,8 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContextPro } from '../AuthProviderFiles/AuthProviderPro';
 
 const NewNavbar = () => {
+
+  
+
+  
 const {userProfile, logoutProfile} = useContext(AuthContextPro)
 const compassback = useNavigate()
 
@@ -10,18 +14,6 @@ function logoutSubmit(){
   logoutProfile()
   compassback("/loginfiles")
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -60,7 +52,7 @@ function logoutSubmit(){
 
     return (
         <div>
-        <div className=" bg-opacity-[0.7] h-[10px] navbar-css navbar bg-slate-200  justify-between">
+        <div className=" fixed top-0 z-10   bg-opacity-[0.7] h-[10px] navbar-css navbar bg-slate-200  justify-between">
          <div className="navbar-start ">
            <div className="dropdown">
              <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -10,9 +10,7 @@ import { Helmet } from 'react-helmet-async';
 const ClassesPage = () => {
 
 
-
-
- const {userProfile} = useContext(AuthContextPro)
+const {userProfile} = useContext(AuthContextPro)
 const [isAdmin] = useIsAdminUser()   
 const [allclass] = useAllClasses()
 const [axiosMagic] = useMagicAxiosBoss()
@@ -21,14 +19,10 @@ const approvedFindClass = allclass.filter(p=>p.status === "approved")
 function selectedClass(props){
 
 const getfindDataClass = approvedFindClass.find(p=>p._id === props)
-
 const {availableSeats,className,email,image,instructorName,price,instructorImage} = getfindDataClass
-
 const putData = {availableSeats,className,email,image,instructorName,price,instructorImage,user_email:userProfile.email,classID:props}
 
-
-
-    axiosMagic.post(`/student/selectclass/`,putData)
+ axiosMagic.post(`/student/selectclass/`, putData)
     .then(res=>{
 
       if(res.data.insertedId){
