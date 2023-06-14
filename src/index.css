@@ -144,3 +144,10 @@ margin-left:auto !important
   background-position: 50%;
   background-size: cover;
 }
+
+
+.postionperformance{
+  position: absolute;
+  top: 16.2rem;
+  left: 34rem;
+}

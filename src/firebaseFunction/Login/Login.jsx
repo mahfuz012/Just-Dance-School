@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import swal from 'sweetalert';
 import useIsAdminUser from '../../HooksFiles/useIsAdminUser';
-
+import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai"
 const Login = () => {
   const locationAddress = useLocation()
   const compass = useNavigate()
   const navigationFrom = locationAddress?.state?.from?.pathname || "/"
 
-
+const [hideicon,sethideicon] = useState(true)
 
   const [,,refetch] = useIsAdminUser()
   const {loginProfile,registerWithGoogle} = useContext(AuthContextPro)
@@ -119,7 +119,6 @@ function loginSubmit (data){
 
 
 
-
     return (
         <div style={{alignItems:"center"}} className='sm:flex sm:justify-center'>
 
@@ -127,7 +126,7 @@ function loginSubmit (data){
 
 <form onSubmit={handleSubmit(loginSubmit)} className='mt-5 pt-5 sm:text-center'>
       <h1 className='text-green-600 text-3xl font-bold my-5'>Login User</h1>
-      <div style={{ alignItems: 'center' }} className='flex flex-col'>
+      <div style={{ alignItems: 'center' }} className='flex flex-col '>
       <input
         {...register('email', { required: true })}
         className='border border-green-300 w-full sm:w-64 my-2 p-2'
@@ -142,12 +141,20 @@ function loginSubmit (data){
       <input
         {...register('password', { required: true })}
         className='w-full sm:w-64 border-green-300 border my-2 p-2'
-        type='password'
+        type={hideicon?"text":"password"}
         placeholder='Type your password'
         name='password'
       />
-      {errors.password && <span className='text-red-700 font-bold'>Please enter your password</span>}
 
+{hideicon?
+       <AiFillEye onClick={()=>sethideicon(!hideicon)} className='postionperformance' />
+:
+       <AiFillEyeInvisible onClick={()=>sethideicon(!hideicon)} className='postionperformance' />
+
+}
+
+      {errors.password && <span className='text-red-700 font-bold'>Please enter your password</span>}
+     
 
 
 
