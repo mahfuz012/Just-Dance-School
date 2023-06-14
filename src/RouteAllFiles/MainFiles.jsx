@@ -20,6 +20,8 @@ import PaymentHistory from '../DashboardFiles/Students/PaymentHistory';
 import Enrolled from '../DashboardFiles/Students/Enrolled';
 import ErrorManager from '../PagesFiles/ErrorManager';
 import UpdateFiles from '../DashboardFiles/Instructor/UpdateFiles';
+import InstructorRoute from '../PrivateRouteMake/InstructorRoute';
+import StudentRoute from '../PrivateRouteMake/StudentRoute';
 
 
  const router = createBrowserRouter([
@@ -63,55 +65,92 @@ import UpdateFiles from '../DashboardFiles/Instructor/UpdateFiles';
               {
                 
                   path: "/dashboard/addfiles",
-                  element: <AddFiles></AddFiles>
+                  element:<PrivaiteRoute>
+                    <InstructorRoute>
+                    <AddFiles></AddFiles> 
+                    </InstructorRoute>
+                    </PrivaiteRoute> 
            
               },
               {
                 
                   path: "/dashboard/updatefiles/:id",
-                  element: <UpdateFiles />
-           
+                  element: 
+                  <PrivaiteRoute>
+                    <InstructorRoute>
+                  <UpdateFiles />
+                 </InstructorRoute>
+                  </PrivaiteRoute>
               },
               {
                 
                   path: "/dashboard/payment/:id",
-                  element: <Paymentpro />
+                  element: 
+                  <PrivaiteRoute>
+                  <Paymentpro />
+                  </PrivaiteRoute>
            
               },
               {
                 
                   path: "/dashboard/myclasses",
-                  element: <MyClasses />
+                  element:
+                  <PrivaiteRoute>
+                    <InstructorRoute>
+                  <MyClasses />
+                  </InstructorRoute>
+                  </PrivaiteRoute>
            
               },
               {
                 
                   path: "/dashboard/paymenthistory",
-                  element: <PaymentHistory />
+                  element:
+                  <PrivaiteRoute>
+                    <StudentRoute>
+                  <PaymentHistory />
+                  </StudentRoute>
+                  </PrivaiteRoute>
            
               },
               {
                 
                   path: '/dashboard/enrolledclass',
-                  element: <Enrolled />
+                  element: 
+                  <PrivaiteRoute>
+                  <Enrolled />
+                  </PrivaiteRoute>
            
               },
               {
                 
                   path: "/dashboard/allclass",
-                  element:<ManageClasses  />
+                  element:
+                  <PrivaiteRoute>
+                    <AdminRoute>
+                  <ManageClasses  />
+                  </AdminRoute>
+                  </PrivaiteRoute>
            
               },
               {
                 
                   path: `/dashboard/update/:id`,
-                  element:<Feedback  />
+                  element:
+                  <PrivaiteRoute>
+                    <AdminRoute>
+                  <Feedback  />
+                  </AdminRoute>
+                  </PrivaiteRoute>
            
               },
               {
                 
                   path: `/dashboard/myallseletedclass`,
-                  element:<MyseletedClasses />
+                  element:
+                  <PrivaiteRoute>
+                  <MyseletedClasses />
+                  </PrivaiteRoute>
            
               }
 

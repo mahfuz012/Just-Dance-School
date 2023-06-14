@@ -41,31 +41,10 @@ if(Loader){
     <Link to={'/dashboard/paymenthistory'} style={{backgroundColor:"#05BFDB"}} className='border text-center font-bold text-md  hover:text-white text-black py-3 sm:ms-5 my-1 rounded-xl '>Payment History</Link>
     
     
-    
-    
     </>
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </div>
@@ -74,7 +53,7 @@ if(Loader){
 
 
 
-<div className='sm:w-10/12 border border-red-600 p-5'>
+<div className='sm:w-10/12 p-5'>
     
     <Outlet/>
     

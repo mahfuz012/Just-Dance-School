@@ -20,11 +20,11 @@ const HomePage = () => {
 
     return (
         <div>
-         <div>  
+         <div className='mb-[4rem]'>  
         <NewNavbar/>
         </div> 
 
-        <div className='outlineSpace mt-[4rem]'>
+        <div className='outlineSpace'>
             <Outlet />
         </div>
         <NEwFooterBar />

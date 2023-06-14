@@ -8,13 +8,13 @@ import spinnerpro from '../SharedFilesALL/Aniki Hamster.json'
 
 
 
-const AdminRoute = ({children}) => {
+const InstructorRoute = ({children}) => {
     const compassing = useLocation()
     const {userProfile,loader} = useContext(AuthContextPro)
     const [isAdmin,Loader]  = useIsAdminUser()
 
     
-   if(userProfile && isAdmin === "admin"){
+   if(userProfile && isAdmin === "instructor"){
     return children
    }
 
@@ -28,4 +28,6 @@ const AdminRoute = ({children}) => {
     return  <Navigate to={'/loginfiles'} state={{from:compassing}} replace ></Navigate>
 };
 
-export default AdminRoute;
+export default InstructorRoute;
+
+

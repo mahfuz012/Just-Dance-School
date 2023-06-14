@@ -33,7 +33,7 @@ return (
             <img className='w-full h-full ' src={instructorImage} />
         </div>
 
-        <div style={{backgroundColor:"#F45050",color:"#F0F0F0"}} className='w-full p-1 rounded-tr-2xl rounded-br-2xl'>
+        <div style={{backgroundColor:"#F45050",color:"#F0F0F0"}} className={`w-full p-1 rounded-tr-2xl rounded-br-2xl `}>
        <p className='font-semibold m-5  text-center text-5xl'>{instructorName}</p>
        <p className='font-semibold m-5  text-2xl'>Total Enroll :{enroll}</p>
        <p className='font-semibold m-5  text-xl'>Gmail : {email}</p>

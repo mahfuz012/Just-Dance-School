@@ -75,7 +75,7 @@ function logoutSubmit(){
 
     return (
         <div>
-        <div className=" fixed top-0 z-10   bg-opacity-[0.7] h-[10px] navbar-css navbar bg-slate-200  justify-between">
+        <div className= {`  ${theme === "dark"?"bg-black text-white":"bg-indigo-100"}  bg-opacity-[0.6] backdrop-blur-3xl fixed top-0 z-10    h-[10px] navbar-css navbar justify-between`}>
          <div className="navbar-start ">
            <div className="dropdown">
              <label tabIndex={0} className="btn btn-ghost lg:hidden">
