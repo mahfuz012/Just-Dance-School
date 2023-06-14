@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import swal from 'sweetalert';
+import { Helmet } from 'react-helmet-async';
 
 const AddFiles = () => {
     const {userProfile} = useContext(AuthContextPro)
@@ -76,7 +77,9 @@ const validatePrice = (value) => {
 
     return (
         <div>
-
+<Helmet>
+<title>Add Class</title>
+</Helmet>
     <div className='text-center '>
           <p className='text-xl p-2 border-b-2 border-red-600 font-semibold bg-blue-200'>Hi instructor, add your dance class for students in this form</p>
          </div>

@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import { useQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet-async';
 
 const PaymentHistory = () => {
 
@@ -44,7 +45,9 @@ const decendingData =  payhistory.sort((a, b) => {
 
     return (
         <div>
-         
+                   <Helmet>
+<title>Payment Hsitory</title>
+</Helmet>
         <div className='sm:flex justify-evenly'>
         <div>
             <p className='border rounded-3xl p-5 bg-orange-300 font-semibold  text-2xl'>Total Payment No : {payhistory?.length || ""}</p>

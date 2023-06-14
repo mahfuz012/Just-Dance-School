@@ -22,6 +22,7 @@ import ErrorManager from '../PagesFiles/ErrorManager';
 import UpdateFiles from '../DashboardFiles/Instructor/UpdateFiles';
 import InstructorRoute from '../PrivateRouteMake/InstructorRoute';
 import StudentRoute from '../PrivateRouteMake/StudentRoute';
+import WelcomeDashboard from '../DashboardFiles/WelcomeDashboard';
 
 
  const router = createBrowserRouter([
@@ -60,6 +61,12 @@ import StudentRoute from '../PrivateRouteMake/StudentRoute';
                 
                   path: "/dashboard/manageuser",
                   element: <PrivaiteRoute><AdminRoute><ManageUser /></AdminRoute></PrivaiteRoute>
+           
+              },
+              {
+                
+                  path: "/dashboard/",
+                  element:<WelcomeDashboard />
            
               },
               {
@@ -118,7 +125,9 @@ import StudentRoute from '../PrivateRouteMake/StudentRoute';
                   path: '/dashboard/enrolledclass',
                   element: 
                   <PrivaiteRoute>
+                           <StudentRoute>
                   <Enrolled />
+                  </StudentRoute>
                   </PrivaiteRoute>
            
               },

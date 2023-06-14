@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
+import { Helmet } from 'react-helmet-async';
 
 const Enrolled = () => {
 
@@ -42,7 +43,9 @@ console.log(enrolled);
 
     return (
         <div>
-
+<Helmet>
+<title>Enrolled</title>
+</Helmet>
  <div>
     <p className='text-center text-2xl font-bold'>Total Enrolled Classes :  {enrolled?.length} </p>
  </div>

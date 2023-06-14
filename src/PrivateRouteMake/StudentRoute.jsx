@@ -14,7 +14,7 @@ const StudentRoute = ({children}) => {
     const [isAdmin,Loader]  = useIsAdminUser()
 
     
-   if(userProfile && isAdmin === null){
+   if(userProfile && !isAdmin){
     return children
    }
 

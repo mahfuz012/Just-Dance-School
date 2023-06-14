@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
+import swal from 'sweetalert';
 
 const PayCheckout = ({price,productId,itemsName}) => {
     const elements = useElements();
@@ -95,6 +96,21 @@ if(paymentIntent){
 
 
 if(paymentIntent.status ===  "succeeded"){
+
+
+  swal({
+    title: 'Success!',
+    text: 'Payment successful.',
+    icon: 'success',
+    button: 'OK',
+  });
+
+
+
+
+
+
+
 
   const paymentInformation= {
 

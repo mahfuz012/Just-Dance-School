@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet-async';
 import useAllUserProfile from '../../HooksFiles/useAllUserProfile';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 
@@ -40,6 +41,12 @@ function makeInstructoruser(props){
 
     return (
         <div>
+
+<Helmet>
+<title>Manage User | Just Dance</title>
+</Helmet>
+
+
         <div>
             <p className='font-serif text-gray-700 font-semibold text-3xl'>Here are all the user profiles</p>
             <p className='font-semibold text-xl mt-5'>Total User: {alluser.length}</p>

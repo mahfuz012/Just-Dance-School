@@ -3,6 +3,7 @@ import { AuthContextPro } from '../../AuthProviderFiles/AuthProviderPro';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const MyClasses = () => {
 const {userProfile} = useContext(AuthContextPro)
@@ -31,6 +32,9 @@ console.log(myclasses);
 
     return (
         <div>
+          <Helmet>
+<title>My Classes</title>
+</Helmet>
             <div className='sm:flex justify-between'><p className='sm:text-2xl font-bold text-blue-700'>My Classes : {myclasses.length}</p>
 <p className='sm:text-2xl font-semibold text-indigo-700'>
      <span className='text-black'>Email:</span> {userProfile.email}</p>

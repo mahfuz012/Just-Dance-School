@@ -56,7 +56,13 @@ if(Loader){
 <div className='sm:w-10/12 p-5'>
     
     <Outlet/>
-    
+  
+
+
+
+
+
+
     
     </div>
 

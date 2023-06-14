@@ -76,8 +76,10 @@ color:rgb(0, 4, 255) !important
   background-image: url(https://images.pexels.com/photos/7130469/pexels-photo-7130469.jpeg?cs=srgb&dl=pexels-codioful-%28formerly-gradienta%29-7130469.jpg&fm=jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
+
+
+
 
 .perpective3d:nth-child(even){
   transition: all 0.2s ease;

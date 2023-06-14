@@ -9,6 +9,7 @@ import {  useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import { AuthContextPro } from '../AuthProviderFiles/AuthProviderPro';
 import usePopularAll from '../HooksFiles/usePopularAll';
+import useIsAdminUser from '../HooksFiles/useIsAdminUser';
 
 const PopularclassComponent = () => {
   const navigation = useNavigate()
@@ -17,6 +18,11 @@ const PopularclassComponent = () => {
     const [axiosMagic] = useMagicAxiosBoss()
   const [allclass] = useAllClasses()
   const {userProfile} = useContext(AuthContextPro)
+
+  const [isAdmin] = useIsAdminUser()  
+
+
+
 
 
     function SeletedClass(props){
@@ -74,13 +80,13 @@ const PopularclassComponent = () => {
         <div className='sm:grid  grid-cols-3  gap-8'>
    
          {
-            popularclass?.map(p=><PopularClass loginfirst={loginfirst} userProfile={userProfile} SeletedClass={SeletedClass} key={p._id} data={p} />)
+            popularclass?.map(p=><PopularClass isAdmin={isAdmin} loginfirst={loginfirst} userProfile={userProfile} SeletedClass={SeletedClass} key={p._id} data={p} />)
          }
             
         </div>
     );
 };
-function PopularClass({data,SeletedClass,userProfile,loginfirst}){
+function PopularClass({data,SeletedClass,userProfile,loginfirst,isAdmin}){
     const {image,price,className,enroll,_id} = data
 
 
@@ -112,8 +118,8 @@ function PopularClass({data,SeletedClass,userProfile,loginfirst}){
     <div className=" mx-auto  mt-auto  ">
 
     {userProfile?
-   <button onClick={()=>SeletedClass(_id)} className="btn bg-gradient-to-r from-violet-400 via-purple-500 to-pink-400 text-white my-5 sm:w-40">Select</button>:
-   <button onClick={loginfirst} className="btn bg-gradient-to-r from-violet-400 via-purple-500 to-pink-400 text-white my-5 sm:w-40">Select</button>
+   <button disabled={isAdmin === "admin" || isAdmin === "instructor"} onClick={()=>SeletedClass(_id)} className="btn bg-gradient-to-r from-violet-400 via-purple-500 to-pink-400 text-white my-5 sm:w-40">Select</button>:
+   <button disabled={isAdmin === "admin" || isAdmin === "instructor"} onClick={loginfirst} className="btn bg-gradient-to-r from-violet-400 via-purple-500 to-pink-400 text-white my-5 sm:w-40">Select</button>
 
     }
 

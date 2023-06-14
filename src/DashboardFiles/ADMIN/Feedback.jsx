@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Feedback = () => {
     const getid  = useParams()
@@ -32,7 +33,9 @@ const Feedback = () => {
     };
     return (
         <div>
-         
+         <Helmet>
+<title>Feedback | Just Dance</title>
+</Helmet>
 
            <div className="max-w-2xl border border-red-400 bg-white p-6 rounded-md shadow-md">
       <h2 className="text-2xl text-red-600 font-semibold mb-4">Feedback Form</h2>

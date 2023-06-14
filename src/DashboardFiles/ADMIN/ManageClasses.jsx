@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useAllClasses from '../../HooksFiles/useAllClasses';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const ManageClasses = () => {
   const[allclass,refetch] = useAllClasses()
@@ -32,6 +33,10 @@ function deniedSubmit(props){
 
     return (
         <div>
+
+<Helmet>
+<title>Manage Class | Just Dance</title>
+</Helmet>
             <div className='sm:flex justify-between'><p className='sm:text-2xl font-bold text-blue-700'>
                 All Classes : {allclass.length}
             </p></div>

@@ -43,8 +43,8 @@ const putData = {availableSeats,className,email,image,instructorName,price,instr
 
 
     return (
-        <div className='w-full'>
-        <Helmet>
+        <div className='w-full mt-20 '>
+<Helmet>
 <title>All Class</title>
 </Helmet>
             
@@ -71,7 +71,7 @@ function Classesall({data,selectedClass,isAdmin}){
 
     <div className="sm:w-8/12  my-2 mx-auto">
   <div className={`card lg:card-side ${(availableSeats === 0 )?"bg-red-500":"bg-base-100"}  shadow-xl`}>
- <img className='sm:h-[350px]  p-2' src={image} alt="Album"/>
+ <img className='sm:h-[350px] sm:w-1/3  p-2' src={image} alt="Album"/>
   <div className="card-body">
     <h2 className="card-title text-2xl">Dance Name : <span className='font-bold text-blue-700'>{className}</span></h2>
     <p className='text-xl italic  py-1'>Instructor Name: {instructorName}</p>

@@ -22,6 +22,9 @@ function deleteSubmit(props){
 
     return (
         <div>
+          <Helmet>
+<title>Seleted Class</title>
+</Helmet>
             <div >
                <p className='text-3xl font-bold'> Total Class :{seletedclasses.length} </p>
             </div>
@@ -82,6 +85,7 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 import useMagicAxiosBoss from '../../HooksFiles/useMagicAxiosBoss';
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 function TableDatas({ data, index,deleteSubmit, }) {
     const { className, instructorName, availableSeats, price, image, _id } = data ;
