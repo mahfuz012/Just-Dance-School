@@ -141,12 +141,12 @@ function loginSubmit (data){
       <input
         {...register('password', { required: true })}
         className='w-full sm:w-64 border-green-300 border my-2 p-2'
-        type={hideicon?"text":"password"}
+        type={!hideicon?"text":"password"}
         placeholder='Type your password'
         name='password'
       />
 
-{hideicon?
+{!hideicon?
        <AiFillEye onClick={()=>sethideicon(!hideicon)} className='postionperformance' />
 :
        <AiFillEyeInvisible onClick={()=>sethideicon(!hideicon)} className='postionperformance' />
