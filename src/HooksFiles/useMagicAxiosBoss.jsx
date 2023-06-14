@@ -17,10 +17,10 @@ const useMagicAxiosBoss = () => {
 
 
 const axiosMagic = axios.create({
-       baseURL:"http://localhost:5000"
+       baseURL:"https://just-dance-server.vercel.app"
    })
    
-
+   
 
 useEffect(()=>{
    axiosMagic.interceptors.request.use((config)=>{

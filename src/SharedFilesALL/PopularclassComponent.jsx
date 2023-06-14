@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import useAllClasses from '../HooksFiles/useAllClasses';
 import useMagicAxiosBoss from '../HooksFiles/useMagicAxiosBoss';
-import { useQuery } from '@tanstack/react-query';
+
 import {FaHotjar} from "react-icons/fa"
 import {IoIosPricetags} from "react-icons/io"
 import {BsFillPeopleFill} from "react-icons/bs"
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import { AuthContextPro } from '../AuthProviderFiles/AuthProviderPro';
 import usePopularAll from '../HooksFiles/usePopularAll';

@@ -149,6 +149,9 @@ const Home = () => {
   <PopularIntructorfiles />
 </div>
 
+
+<Popular title="Online Classes"  details="Our Pupular Online Class , You can get Idea"/>
+
 <div className='my-10'>
   <ExtraSection />
 </div>
