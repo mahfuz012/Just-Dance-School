@@ -17,6 +17,7 @@ import { Helmet } from 'react-helmet-async';
 import Popular from '../Popular';
 import PopularclassComponent from '../../SharedFilesALL/PopularclassComponent';
 import PopularIntructorfiles from '../../SharedFilesALL/PopularIntructorfiles';
+import ExtraSection from '../../SharedFilesALL/ExtraSection';
 
 const Home = () => {
 
@@ -144,10 +145,13 @@ const Home = () => {
 
 <Popular title="Popular Intructors"  details="Here All Popular Intructors , You can get Idea"/>
 
-<div>
+<div className=''>
   <PopularIntructorfiles />
 </div>
 
+<div className='my-10'>
+  <ExtraSection />
+</div>
 
 
         </div>
