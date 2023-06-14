@@ -6,7 +6,7 @@ import { Typewriter } from 'react-simple-typewriter';
 const TypeWriterFunction = () => {
     return (
         <div>
-               <div className='sm:ms-52 my-5'>
+               <div className='my-5'>
 
 <h1 className='text-2xl  font-mono  mt-3' style={{  margin: 'auto', fontWeight: 'normal' }}>
 

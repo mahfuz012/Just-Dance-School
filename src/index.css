@@ -126,3 +126,19 @@ margin-left:auto !important
     margin: 0 !important;
     }
 }
+
+
+
+.slider-bg-one{
+  background-image: url(https://i.ibb.co/m8hqC05/Untitled-design-1.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+}
+.bg-slider-two{
+  background-image:
+  linear-gradient(to right, rgba(0, 0, 0, 15), rgba(0, 0, 0, 0.2)), url(https://i.ibb.co/jL555CH/Untitled-1348-534-px.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+}

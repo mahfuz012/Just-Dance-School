@@ -4,8 +4,25 @@ import { AuthContextPro } from '../AuthProviderFiles/AuthProviderPro';
 
 const NewNavbar = () => {
 
-  
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
 
+const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
   
 const {userProfile, logoutProfile} = useContext(AuthContextPro)
 const compassback = useNavigate()
@@ -19,6 +36,12 @@ function logoutSubmit(){
 
     const NavigationBar =
     <>
+
+ <label className="label cursor-pointer">
+   <input type="checkbox" onChange={handleToggle} className="toggle toggle-success"  />
+  </label>
+ 
+
   <Link to={'/'} ><li className=' mx-2 font-semibold'>Home</li></Link> 
           
   <Link to={"/instructorpage"}><li className='mx-2 font-semibold'>Instructors</li></Link>

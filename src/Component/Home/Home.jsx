@@ -18,6 +18,7 @@ import Popular from '../Popular';
 import PopularclassComponent from '../../SharedFilesALL/PopularclassComponent';
 import PopularIntructorfiles from '../../SharedFilesALL/PopularIntructorfiles';
 import ExtraSection from '../../SharedFilesALL/ExtraSection';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -34,7 +35,7 @@ const Home = () => {
 <title>Home | Just Dance</title>
 </Helmet>
 
-          <div  className=' w-full border h-screen border-red-600'>
+          <div  className='sm:h-screen'>
 
 <div>
 <>
@@ -46,73 +47,17 @@ const Home = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide >
-
-<div className='sm:flex border border-blue-600 sm:w-full sm:h-[100vh] bg-one-one'>
-
-<div style={{alignItems:"center"}} className='sm:w-6/12  sm:flex flex-col justify-center px-10   '>
-
-
-<h1 className="sm:text-6xl  text-center font-bold text-black bg-success p-5 rounded-2xl">Just School Dance</h1>
-<p className="sm:text-lg text-black my-5 font-semibold">Register for an unforgettable dance experience!</p>
-
-</div>
-
-
-
-
-
-<div style={{alignItems:"center"}} className='sm:w-6/12 sm:flex justify-center'>
-<img className='mx-auto' src="https://i.ibb.co/7Vx7D0M/1.png" />
-</div>
-
-</div>
-</SwiperSlide>
-
-
-
-
+  
 <SwiperSlide >
 
-<div className='sm:flex border border-blue-600 sm:w-full sm:h-[100vh] bg-one-two'>
+<div className='flex border border-blue-600 sm:w-full sm:h-[100vh] bg-one-three'>
 
-<div style={{alignItems:"center"}} className='sm:w-6/12  sm:flex flex-col justify-center px-10   '>
-
-
-<h1 className="sm:text-6xl  text-center font-bold text-black bg-success p-5 rounded-2xl">Just School Dance</h1>
-<p className="sm:text-lg text-black my-5 font-semibold">Register for an unforgettable dance experience!</p>
-
+<div style={{alignItems:"center"}} className='sm:w-6/12 slider-bg-one flex flex-col justify-center px-10 '>
+<h1 className="sm:text-6xl  text-center font-bold text-black bg-success sm:p-5 rounded-2xl">Just School Dance</h1>
+<div className='me-auto my-3 ms-7 w-1/3'>
+<Link to={'/classess'}><button className='btn btn-warning '>Join Our Classes</button></Link>
 </div>
-
-
-
-
-
-<div style={{alignItems:"center"}} className='sm:w-6/12 sm:flex justify-center'>
-<img className='mx-auto w-4/6' src="https://i.ibb.co/3FtPs7K/canva-colorful-dance-party-night-poster-Ewp3z3-Ww-Ck-U.jpg" />
 </div>
-
-</div>
-</SwiperSlide>
-
-
-
-
-
-<SwiperSlide >
-
-<div className='sm:flex border border-blue-600 sm:w-full sm:h-[100vh] bg-one-three'>
-
-<div style={{alignItems:"center"}} className='sm:w-6/12  sm:flex flex-col justify-center px-10   '>
-
-
-<h1 className="sm:text-6xl  text-center font-bold text-black bg-success p-5 rounded-2xl">Just School Dance</h1>
-<p className="sm:text-lg text-black my-5 font-semibold">Register for an unforgettable dance experience!</p>
-
-</div>
-
-
-
 
 
 <div style={{alignItems:"center"}} className='sm:w-6/12 sm:flex justify-center'>
@@ -121,6 +66,20 @@ const Home = () => {
 
 </div>
 </SwiperSlide>
+
+<SwiperSlide>
+<div className='sm:w-full sm:h-[100vh] bg-slider-two'>
+  
+<div className='sm:absolute top-40 left-20 '>
+<p className='text-white text-8xl p-5  bg-red-700'>Here WE GO</p>
+<p className='text-red-700 text-5xl p-5  bg-white'>striding towards our next milestone</p>
+
+</div>
+</div>
+</SwiperSlide>
+
+
+
 
  
       </Swiper>
@@ -152,7 +111,7 @@ const Home = () => {
 
 <Popular title="Online Classes"  details="Our Pupular Online Class , You can get Idea"/>
 
-<div className='my-10'>
+<div className='my-20'>
   <ExtraSection />
 </div>
 
